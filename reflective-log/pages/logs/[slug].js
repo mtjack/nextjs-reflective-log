@@ -1,4 +1,5 @@
 import { client } from "../../api/client";
+import PostDate from "../../components/post-date";
 import { gql } from "@apollo/client";
 
 export async function getStaticPaths() {
@@ -53,6 +54,8 @@ export default function singleEntry({ singleEntry }) {
 	return (
 		<div>
 			<p>This is a single post</p>
+
+			<PostDate date={singleEntry.date} />
 		</div>
 	)
 }

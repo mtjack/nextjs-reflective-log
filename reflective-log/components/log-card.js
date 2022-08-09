@@ -1,14 +1,8 @@
+import PostDate from "./post-date";
 import Link from "next/dist/client/link";
 
 export default function LogCard({ entry }) {
 	const {name, slug, date, tags} = entry;
-	
-	const months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-	const DateUTC = Date.parse(date);
-	const createPostDate = new Date(DateUTC);
-
-	const postDate = `${createPostDate.getDate()} ${months[createPostDate.getMonth()]} ${createPostDate.getFullYear()}`;
 
 	return (
 		<div>
@@ -18,7 +12,7 @@ export default function LogCard({ entry }) {
 				<a>View post</a>
 			</Link>
 
-			<p>{postDate}</p>
+			<PostDate date={date} />
 
 			<ul>
 				{tags.map((tag) => (
