@@ -1,6 +1,6 @@
 import { client } from "../../api/client";
 import {  gql } from "@apollo/client"
-import Link from "next/link";
+import LogCard from "../../components/log-card";
 
 export async function getStaticProps() {
     const { data } = await client.query({
@@ -30,9 +30,7 @@ export default function AllLogs({ data }) {
             <p>All Logs</p>
 
             {data.map((entry) => (
-                <Link href={`${entry.slug}`}>
-                    <a>Post</a>
-                </Link>   
+                <LogCard entry={entry} />  
             ))}
         </div>
     )
