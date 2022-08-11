@@ -1,6 +1,8 @@
 import { client } from "../../api/client";
 import PostDate from "../../components/post-date";
 import { gql } from "@apollo/client";
+import Link from "next/dist/client/link";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export async function getStaticPaths() {
 	const { data } = await client.query({
@@ -53,9 +55,23 @@ export async function getStaticProps({ params }) {
 export default function singleEntry({ singleEntry }) {
 	return (
 		<div>
-			<p>This is a single post</p>
+			<h1>{singleEntry.name}</h1>
 
 			<PostDate date={singleEntry.date} />
+
+			<ul>
+				{singleEntry.tags.map((tag) => (
+					<li>{tag}</li>
+				))}
+			</ul>
+
+			<div>
+				{documentToReactComponents(singleEntry.content.json)}
+			</div>
+
+			<Link href={"/logs/all-logs"}>
+				<a>Back to all logs</a>
+			</Link>
 		</div>
 	)
 }

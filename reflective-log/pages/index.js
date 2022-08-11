@@ -1,6 +1,9 @@
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <p className="text-green-500">Test green text</p>
+    <Link href={"/logs/all-logs"}>
+      <a>View all logs</a>
+    </Link>
   )
 }
