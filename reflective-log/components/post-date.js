@@ -1,5 +1,5 @@
 export default function PostDate({ date }) {
-  const months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 	const dateOriginal = Date.parse(date);
 	const createPostDate = new Date(dateOriginal);

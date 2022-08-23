@@ -10,6 +10,9 @@ export async function getStaticProps() {
 				items {
 					name,
 					slug,
+					image {
+						url,
+					},
 					date,
 					tags
 				}
@@ -29,9 +32,13 @@ export default function AllLogs({ data }) {
 		<div>
 			<p>All Logs</p>
 
-			{data.map((entry) => (
-				<LogCard entry={entry} />  
-			))}
+			<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+
+				{data.map((entry, i) => (
+					<LogCard entry={entry} key={i}/>  
+				))}
+
+			</div>
 		</div>
 	)
 }
