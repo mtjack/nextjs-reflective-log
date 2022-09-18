@@ -28,16 +28,139 @@ body {
   }
  
   .book-cover {
+    position: absolute;
     height: 250px;
     width: 180px;
-    position: absolute;
     background-size: 180px 250px;
     border-radius: 5px 15px 15px 5px;
-    box-shadow: 0 0 5px 1.5px rgba(0, 0, 0, 0.25);
     transition: .5s linear;
     transform-origin: left center 0px;
     z-index: 10;
+  }
 
+  .book-cover::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: 20px;
+    width: 15px;
+    height: calc(100% + 4px);
+    border-radius: 3px;
+    z-index: 15;
+  }
+
+  .book-cover.blue {
+    background-color: #2e95aa; 
+  }
+
+  .book-cover.blue::before {
+    background: linear-gradient(
+      to right,
+      #277e90 0%,
+      #2e95aa 12%,
+      #277e90 25%,
+      #2e95aa 37%,
+      #277e90 50%,
+      #2e95aa 62%,
+      #277e90 75%,
+      #2e95aa 87%,
+      #277e90 100%
+    );
+  }
+
+  .book-cover.red {
+    background-color: #cc4b48;
+  }
+
+  .book-cover.red::before {
+    background: linear-gradient(
+      to right,
+      #bd3834 0%,
+      #cc4b48 12%,
+      #bd3834 25%,
+      #cc4b48 37%,
+      #bd3834 50%,
+      #cc4b48 62%,
+      #bd3834 75%,
+      #cc4b48 87%,
+      #bd3834 100%
+    );
+  }
+
+  .book-cover.pink {
+    background-color: #f4a7bb;
+  }
+
+  .book-cover.pink::before {
+    background: linear-gradient(
+      to right,
+      #ed7090 0%,
+      #f4a7bb 12%,
+      #ed7090 25%,
+      #f4a7bb 37%,
+      #ed7090 50%,
+      #f4a7bb 62%,
+      #ed7090 75%,
+      #f4a7bb 87%,
+      #ed7090 100%
+    );
+  }
+
+  .book-cover.yellow {
+    background-color: #f6bc3f;
+  }
+
+  .book-cover.yellow::before {
+    background: linear-gradient(
+      to right,
+      #f3ac12 0%,
+      #f6bc3f 12%,
+      #f3ac12 25%,
+      #f6bc3f 37%,
+      #f3ac12 50%,
+      #f6bc3f 62%,
+      #f3ac12 75%,
+      #f6bc3f 87%,
+      #f3ac12 100%
+    );
+  }
+
+  .book-cover.green {
+    background-color: #abc3b5;
+  }
+
+  .book-cover.green::before {
+    background: linear-gradient(
+      to right,
+      #8aac98 0%,
+      #abc3b5 12%,
+      #8aac98 25%,
+      #abc3b5 37%,
+      #8aac98 50%,
+      #abc3b5 62%,
+      #8aac98 75%,
+      #abc3b5 87%,
+      #8aac98 100%
+    );
+  }
+
+  .book-cover.teal {
+    background-color: #8ecaca;
+  }
+
+  .book-cover.teal::before {
+    background: linear-gradient(
+      to right,
+      #6ab9b9 0%,
+      #8ecaca 12%,
+      #6ab9b9 25%,
+      #8ecaca 37%,
+      #6ab9b9 50%,
+      #8ecaca 62%,
+      #6ab9b9 75%,
+      #8ecaca 87%,
+      #6ab9b9 100%
+    );
   }
 
   .book-page {
@@ -51,15 +174,28 @@ body {
     background-size: 100% 10px;
     overflow: hidden;
   }
+  
 
   .book-details {
-    position: absolute;
-    top: 180px;
-    padding: 10px;
-    font-weight: 800;
+    position: relative;
+    height: 70px;
+    margin-top: 80px;
+    padding: 15px;
+    font-weight: 600;
     font-size: 12px;
-    color: #fff;
-    background-color: #333333d9; 
+    color: #222;
+    background-color: #ffffff; 
+  }
+
+  .book-details::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #cddc39;
+
   }
 }
 

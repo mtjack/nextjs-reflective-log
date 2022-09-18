@@ -60,12 +60,6 @@ export default function singleEntry({ singleEntry }) {
 
 			<PostDate date={singleEntry.date} />
 
-			<ul>
-				{singleEntry.tags.map((tag, i) => (
-					<li key={i}>{tag}</li>
-				))}
-			</ul>
-
 			<div className="prose lg:prose-xl">
 				{documentToReactComponents(singleEntry.content.json)}
 			</div>

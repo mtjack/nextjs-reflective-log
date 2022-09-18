@@ -1,16 +1,15 @@
 import PostDate from "./post-date";
 import Link from "next/dist/client/link";
-import { URLPattern } from "next/server";
 
 export default function LogCard({ entry }) {
-	const { name, slug, image, date, tags } = entry;
+	const { name, slug, date, coverColor } = entry;
 
 	return (
 		<>
-			<Link href={`${slug}`}>
+			<Link href={`/blog/${slug}`}>
 				<a>
-					<div className="book" >
-						<div className="book-cover" style={{backgroundImage: `url(${image.url})`}}>
+					<div className="book">
+						<div className={`book-cover ${coverColor[0]}`}>
 								<div className="book-details flex w-full gap-1">
 									<p>{ name } -</p>
 									<PostDate date={date} />
@@ -20,12 +19,6 @@ export default function LogCard({ entry }) {
 					</div>
 				</a>
 			</Link>
-
-			<ul>
-				{tags.map((tag, i) => (
-					<li key={i}>{tag}</li>
-				))}
-			</ul>
 		</>
 	)
 }
