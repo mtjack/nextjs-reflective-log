@@ -6,7 +6,7 @@ export default function LogCard({ entry }) {
 
 	return (
 		<>
-			<Link href={`/blog/${slug}`}>
+			<Link href={`/log/${slug}`}>
 				<a>
 					<div className="book">
 						<div className={`book-cover ${coverColor[0]}`}>

@@ -4,7 +4,6 @@ import { gql } from "@apollo/client";
 import Link from "next/dist/client/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-
 export async function getStaticPaths() {
 	const { data } = await client.query({
 		query: gql`
@@ -64,7 +63,7 @@ export default function singleEntry({ singleEntry }) {
 				{documentToReactComponents(singleEntry.content.json)}
 			</div>
 
-			<Link href={"/logs/all-logs"}>
+			<Link href={`/log/pages/1`}>
 				<a>Back to all logs</a>
 			</Link>
 		</div>

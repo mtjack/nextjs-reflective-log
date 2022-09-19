@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
     const paths = []
 
-    for (let page = 2; page <= totalPages; page++) {
+    for (let page = 1; page <= totalPages; page++) {
         paths.push({ params: {page: page.toString()} })
     }
 
@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export default function BlogIndexPage({ data, currentPage, totalPages }) {
+export default function LogIndexPage({ data, currentPage, totalPages }) {
     return (
         <>
             <div className="md:max-w-lg lg:max-w-5xl my-0 mx-auto">
