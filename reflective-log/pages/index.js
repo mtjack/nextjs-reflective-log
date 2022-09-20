@@ -1,6 +1,5 @@
 import { client } from "../api/client";
 import LogCard from "../components/log-card";
-import Link from "next/link";
 import { gql } from "@apollo/client";
 
 export async function getStaticProps() {
@@ -29,11 +28,13 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
     <>
-      <Link href={"/log/pages/1"}>
-        <a>View all logs</a>
-      </Link>
-
       <div>
+        <p>This site is where I upload my Personal Reflective Log for my University Profecional Practice 3 module.</p>
+        <p>The Log is kept weekly(ish) and will cover what I've done at work that week and my reflections on it.</p>
+        
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-8 my-8 mx-auto">
         {data.map((entry, i) =>(
           <LogCard entry={entry} key={i}/>
         ))}

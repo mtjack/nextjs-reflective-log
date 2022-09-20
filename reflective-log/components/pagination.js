@@ -9,7 +9,7 @@ export default function Pagination(props) {
     const prevDisabled = parseInt(currentPage, 10) === 1
 
     return (
-        <ol>
+        <ol class="flex justify-between max-w-md my-2 mx-auto">
             <li>
                 {prevDisabled && <span>{"<<"}</span>}
                 {!prevDisabled && (

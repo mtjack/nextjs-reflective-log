@@ -36,7 +36,7 @@ export default function LogIndexPage({ data, currentPage, totalPages }) {
     return (
         <>
             <div className="md:max-w-lg lg:max-w-5xl my-0 mx-auto">
-                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 gap-y-14 place-items-center">
+                <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 gap-y-14 place-items-center">
                     {data.map((entry, i) => (
                         <LogCard entry={entry} key={i}/>  
                     ))}
