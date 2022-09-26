@@ -10,8 +10,8 @@ export default function LogCard({ entry }) {
 				<a>
 					<div className="book">
 						<div className={`book-cover ${coverColor[0]}`}>
-								<div className="book-details flex w-full gap-1">
-									<p>{ name } -</p>
+								<div className="book-details flex flex-col w-full">
+									<p>{ name },</p>
 									<PostDate date={date} />
 								</div>
 						</div>

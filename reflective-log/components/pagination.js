@@ -33,7 +33,7 @@ export default function Pagination(props) {
             </li>
 
             <li className="btn">
-                {nextDisabled && <span>Next {">"}</span>}
+                {nextDisabled && <span>{">"}</span>}
                 {!nextDisabled && (
                     <Link href={nextPageUrl}>
                         <a> {">"}</a>
