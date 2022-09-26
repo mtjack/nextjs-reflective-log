@@ -9,8 +9,8 @@ export default function Pagination(props) {
     const prevDisabled = parseInt(currentPage, 10) === 1
 
     return (
-        <ol className="flex justify-between max-w-md my-2 mx-auto">
-            <li>
+        <ol className="btn-group flex justify-center mb-5">
+            <li className="btn">
                 {prevDisabled && <span>{"<<"}</span>}
                 {!prevDisabled && (
                     <Link href={"1"}>
@@ -19,29 +19,29 @@ export default function Pagination(props) {
                 )}
             </li>
 
-            <li>
-                {prevDisabled && <span>{"<"} Previous Page</span>}
+            <li className="btn">
+                {prevDisabled && <span>{"<"}</span>}
                 {!prevDisabled && (
                     <Link href={prevPageUrl}>
-                        <a>{"<"} Previous Page</a>
+                        <a>{"<"}</a>
                     </Link>
                 )}
             </li>
 
-            <li>
+            <li className="btn">
                 Page {currentPage} of {totalPages}
             </li>
 
-            <li>
-                {nextDisabled && <span>Next Page {">"}</span>}
+            <li className="btn">
+                {nextDisabled && <span>Next {">"}</span>}
                 {!nextDisabled && (
                     <Link href={nextPageUrl}>
-                        <a>Next Page {">"}</a>
+                        <a> {">"}</a>
                     </Link>
                 )}
             </li>
 
-            <li>
+            <li className="btn">
                 {nextDisabled && <span>{">>"}</span>}
                 {!nextDisabled && (
                     <Link href={`${totalPages}`}>

@@ -2,21 +2,27 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="flex flex-col justify-center bg-slate-600 p-4 my-0 mx-auto">
-            <h1>Personal Reflective Log</h1>
-            <nav>
-                <ul className="flex justify-center gap-2">
-                    <li>
-                        <Link href={"/"}>
-                            <a>Home</a>
-                        </Link>
-                    </li>
+        <header>
+            <nav className="navbar bg-base-100">
+                <div className="flex-1">
+                    <Link href={"/"}>
+                        <a className="btn btn-ghost normal-case text-xl">Reflective Log</a>
+                    </Link>
+                </div>
+                <div className="flex-none">
+                    <ul className="menu menu-horizontal p-0">
                     <li>
                         <Link href={"/log/pages/1"}>
-                            <a>Log</a>
+                            <a>All Logs</a>
                         </Link>
                     </li>
-                </ul>
+                    <li>
+                        <Link href={"/about"}>
+                            <a>About</a>
+                        </Link>
+                    </li>
+                    </ul>
+                </div>
             </nav>
         </header>
     )

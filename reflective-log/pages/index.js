@@ -1,17 +1,16 @@
 import { client } from "../api/client";
 import LogCard from "../components/log-card";
 import { gql } from "@apollo/client";
+import Link from "next/link";
+import Head from "next/head";
 
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
     query {
-      logEntryCollection(limit: 3, order: date_DESC) {
+      logEntryCollection(limit: 1, order: date_DESC) {
         items {
-          name,
-          slug,
-          date,
-          coverColor
+          slug
         }
       }
     }
@@ -28,17 +27,29 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
     <>
-      <div>
-        <p>This site is where I upload my Personal Reflective Log for my University Profecional Practice 3 module.</p>
-        <p>The Log is kept weekly(ish) and will cover what I've done at work that week and my reflections on it.</p>
-        
-      </div>
 
-      <div className="flex flex-wrap justify-center gap-8 my-8 mx-auto">
-        {data.map((entry, i) =>(
-          <LogCard entry={entry} key={i}/>
-        ))}
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+        <title>Reflective Log</title>
+      </Head>
+
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img src="https://data.whicdn.com/images/334928403/original.jpg?t=1567715183" className="max-w-sm w-full rounded-lg shadow-2xl" />
+          <div>
+            <h1 className="text-5xl font-bold">Personal Reflective Log</h1>
+            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <div className="btn-group">
+              <Link href={`/log/pages/1`}>
+                <a className="btn btn-primary">All Logs</a>
+              </Link>
+              <Link href={`/log/${data[0].slug}`}>
+                <a className="btn btn-Secondary">Latest Entry</a>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </> 
   )
 }
